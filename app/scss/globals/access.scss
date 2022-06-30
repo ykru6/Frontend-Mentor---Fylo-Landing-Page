@@ -1,0 +1,93 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.access {
+    flex-flow: column nowrap;
+
+    padding-top: rem(60);
+    padding-bottom: rem(70);
+    padding-inline: rem(36);
+
+    background-color: clr(primary, desaturated-blue);
+    color: clr(neutral, light-grayish-blue);
+
+    text-align: center;
+
+    @include breakpoint(medium) {
+        flex-flow: row nowrap;
+        gap: 12rem;
+
+        text-align: left;
+
+        padding: 0;
+    }
+
+    &__container {
+        flex: 1 1 50%;
+
+        @include breakpoint(medium) {
+            padding-block: rem(100);
+            padding-inline: rem(60);
+            width: 50%;
+        }
+    }
+
+    &__heading {
+        font-size: rem(18);
+        font-weight: $f-bold;
+
+        @include breakpoint(medium) {
+            font-size: rem(30);
+        }
+    }
+    
+    &__text {
+        font-size: rem(15);
+        
+        margin-block: rem(22);
+
+        @include breakpoint(medium) {
+            font-size: 1rem;
+        }
+    }
+
+    &__fill-out {
+        padding-inline: rem(25);
+
+        form {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: rem(12);
+
+            @include breakpoint(medium) {
+                flex: 1 1 50%;
+                justify-content: flex-start;
+                
+                margin-right: rem(75);
+            }
+        }
+        
+        @include breakpoint(medium) {
+            padding-block: rem(100);
+            padding-inline: rem(60);
+            
+            width: 50%;
+        }
+    }
+    
+    &__cta {
+        font-size: rem(14);
+        
+        transition: all 350ms ease-in-out;
+        
+        &:hover {
+            cursor: pointer;
+            background-color: $cta-hover;
+        }
+        
+        @include breakpoint(medium) {
+            font-size: rem(12);
+
+        }
+    }
+}

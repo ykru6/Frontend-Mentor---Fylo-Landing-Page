@@ -1,0 +1,60 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.header {
+
+    nav {
+        padding: rem(24);
+        margin-bottom: rem(74);
+
+        justify-content: space-between;
+
+        @include breakpoint(medium) {
+            padding-inline: rem(60);
+            padding-block: rem(40);
+
+            margin-bottom: rem(37);
+        }
+    }
+
+    &__logo {
+
+        img {
+            width: rem(80);
+            height: rem(25);
+
+            @include breakpoint(medium) {
+                width: 10rem;
+                height: auto;
+            }
+        }
+    }
+
+    &__links {
+
+        a {
+            font-size: rem(12);
+            font-family: 'Raleway', sans-serif;
+            font-weight: $f-reg;
+
+            transition: all 350ms ease-in-out;
+
+            &:hover {
+                color: clr(accent, bright-blue);
+            }
+
+            @include breakpoint(medium) {
+                font-size: 1rem;
+            }
+
+            &:not(:first-child) {
+                margin-left: rem(25);
+
+                @include breakpoint(medium) {
+                    margin-left: rem(78);
+                }
+            }
+        }
+    }
+}
+

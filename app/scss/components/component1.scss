@@ -1,0 +1,53 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+// fill-in with cta
+
+.input {
+    width: 100%;
+    height: rem(40);
+    outline-color: rgba(48, 101, 248, 0.63);
+
+    box-shadow: 4px 4px 27px rgba(0, 0, 0, 0.2);
+
+    padding: rem(12);
+
+    &::placeholder {
+        font-size: rem(12);
+    }
+}
+
+.button {
+    height: rem(40);
+    
+    border: 0 solid none;
+    border-radius: rem(4);
+    background-color: clr(accent, bright-blue);
+    box-shadow: 0 8px 27px rgba(0, 0, 0, 0.24);
+
+    color: white;
+
+    @include breakpoint-down(small) {
+        width: 100%;
+    }
+
+    @include breakpoint(medium) {
+        width: max-content;
+
+        padding-inline: 2rem;
+    }
+}
+
+.social {
+    font-size: rem(14);
+
+    border-radius: 50%;
+    border: 1px solid #fff;
+
+    width: 1.875rem;
+    height: 1.875rem;
+
+    color: #fff;
+        
+    margin: 0 0.5rem;
+}

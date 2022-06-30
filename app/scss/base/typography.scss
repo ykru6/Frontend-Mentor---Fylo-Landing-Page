@@ -1,0 +1,32 @@
+@use 'fonts' as *;
+@use '../util' as *;
+
+h1,
+h2,
+h3 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: $f-bold;
+
+	margin-top: 0;
+	line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: clr(primary, darker-blue);
+}
+
+button, 
+input {
+	font-family: 'Raleway', sans-serif;
+}
+
+button {
+	font-weight: $f-bold;
+}
+
+input {
+	font-weight: $f-reg;
+}

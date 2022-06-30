@@ -1,0 +1,113 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.primary {
+    flex-flow: column nowrap;
+
+    margin-bottom: rem(90);
+
+    @include breakpoint(medium) {
+        flex-flow: row-reverse nowrap;
+        gap: 8rem;
+
+        padding-inline: rem(60);
+    }
+
+    &__hero {
+        padding-inline: rem(30);
+        margin-bottom: rem(50);
+
+        img {
+            width: 100%;
+        }
+
+        @include breakpoint(medium) {
+            flex: 1 1 50%;
+
+            padding: 0;
+
+            img {
+                max-width: rem(700);
+            }
+        }
+    }
+
+    &__container {
+        text-align: center;
+
+        @include breakpoint(medium) {
+            flex: 1 1 50%;
+            align-self: flex-start;
+
+            text-align: left;
+
+            margin-block: rem(75);
+
+            > h1, p {
+                padding: 0;
+            }
+
+            .primary__fill-out {
+                padding: 0;
+            }
+        }
+    }
+
+    &__title {
+        font-size: rem(25);
+        font-weight: $f-bold;
+
+        line-height: 1.5;
+
+        padding-inline: rem(30);
+        margin-bottom: rem(32);
+
+        @include breakpoint(medium) {
+            font-size: min(max(1rem, 3.5vw), 2.5rem);
+
+            margin-bottom: rem(26);
+        }
+    }
+
+    &__subtitle {
+        font-size: rem(14);
+        font-weight: $f-reg;
+
+        padding-inline: rem(42);
+        margin-bottom: rem(34);
+    }
+
+    &__fill-out {
+        padding-inline: rem(42);
+
+        form {
+            flex-flow: column nowrap;
+            gap: rem(12);
+
+            @include breakpoint(medium) {
+                flex-flow: row nowrap;
+
+                margin-right: rem(75);
+            }
+        }
+    }
+
+    &__cta {
+        font-size: rem(14);
+        
+        transition: all 350ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $cta-hover;
+        }
+
+        @include breakpoint(medium) {
+            font-size: rem(12);
+
+            &#{&} {
+                width: rem(220);
+            }
+        }
+    }
+}

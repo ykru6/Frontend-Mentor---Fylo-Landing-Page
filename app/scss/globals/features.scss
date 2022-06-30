@@ -1,0 +1,172 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.feature {
+    flex-flow: column nowrap;
+
+    background-color: clr(neutral, light-grayish-blue);
+
+    clip-path: ellipse(125% 70% at 50% 70%);
+
+    @include breakpoint(medium) {
+        flex-flow: row-reverse nowrap;
+        gap: 6rem;
+
+        padding-block: rem(120);
+        padding-inline: rem(60);
+    }
+
+    &__hero {
+        padding-inline: rem(26);
+        margin-top: rem(94);
+        margin-bottom: rem(90);
+
+        img {
+            width: 100%;
+        }
+
+        @include breakpoint(medium) {
+            display: flex;
+            flex: 1 1 50%;
+            justify-content: center;
+            
+            padding: 0;
+            margin: 0;
+
+            img {
+                max-width: rem(700);
+            }
+        }
+    }
+
+    &__container {
+        @include breakpoint(medium) {
+            flex: 1 1 50%;
+        }
+    }
+
+    &__heading {
+        text-align: center;
+
+        color: clr(primary, darker-blue);
+
+        margin-bottom: rem(30);
+
+        @include breakpoint(medium) {
+            font-size: min(max(1rem, 3.5vw), 2.5rem);
+            
+            text-align: left;
+
+            padding: 0;
+        }
+    }
+
+    &__text {
+        padding-inline: rem(20);
+        margin-bottom: 1.25rem;
+
+        color: clr(primary, darker-blue);
+
+        @include breakpoint(medium) {
+            text-align: left;
+
+            padding: 0;
+        }
+    }
+
+    &__text:nth-of-type(2) {
+        margin-bottom: rem(40);
+    }
+
+    &__link {
+        display: block;
+
+        margin-bottom: rem(46);
+        
+        text-align: center;
+        
+        a {
+            display: inline-block;
+
+            border-bottom: 1px solid clr(accent, moderate-cyan);
+
+            color: clr(accent, moderate-cyan);
+
+            > img {
+                display: inline;
+
+                vertical-align: middle;
+            }
+        }
+
+
+        @include breakpoint(medium) {
+            display: inline-block;
+        }
+    }
+
+    &__testimonial {
+        background-image: url(/app/asset/images/icon-quotes.svg);
+        background-repeat: no-repeat;
+        background-position-x: rem(26);
+        background-position-y: rem(26);
+        background-color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+        border-radius: rem(4);
+        
+        padding-block: rem(20);
+        padding-inline: rem(26);
+        margin-inline: rem(50);
+        margin-bottom: rem(80);
+        
+        > p {
+            font-size: 10px;
+            
+            margin-top: rem(22);
+            margin-bottom: rem(16);
+        }
+        
+        @include breakpoint(medium) {
+            width: rem(350);
+            height: rem(200);
+            
+            margin: 0;
+            
+            background-position-y: rem(23);
+
+            > p {
+                font-size: rem(14);
+            }
+        }
+    }
+
+    &__user {
+        flex-flow: row nowrap;
+
+        img {
+            width: rem(24);
+            height: rem(24);
+            border-radius: 50%;
+        }
+
+        > div {
+            flex-flow: column nowrap;
+
+            margin-left: rem(12);
+        }
+    }
+
+    &__username {
+        font-size: rem(10);
+        font-weight: $f-bold;
+    }
+
+    &__user-status {
+        font-size: rem(8);
+    }
+}
+
+
+
+
+  

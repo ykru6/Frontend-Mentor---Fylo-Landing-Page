@@ -1,0 +1,113 @@
+@use '../base/' as *;
+@use '../util' as *;
+
+.footer {
+    padding-block: rem(60);
+    padding-inline: rem(60);
+
+    background-color: clr(primary, darker-blue);
+    color: clr(neutral, light-grayish-blue);
+
+    &__container {
+        display: flex;
+        align-items: flex-end;
+
+        @include breakpoint(medium) {
+            padding-block: 1.5rem;
+        }
+    }
+
+    &__logo {
+        display: block;
+
+        path {
+            fill: clr(neutral, light-grayish-blue);
+        }
+    }
+
+    &__content {
+        flex-flow: column nowrap;
+
+        @include breakpoint(medium) {
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            gap: 7rem;
+        }
+    }
+
+    &__contact {
+        flex: 1 1 33%;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        gap: rem(10);
+
+        margin-top: rem(40);
+        margin-bottom: rem(60);
+
+        p, img {
+            display: inline;
+        }
+        
+        img {
+            vertical-align: middle;
+
+            margin-right: rem(5);
+        }
+
+        @include breakpoint(medium) {
+            margin: 0;
+        }
+    }
+
+    &__links {
+        flex-flow: column nowrap;
+        gap: 2rem;
+
+        @include breakpoint(medium) {
+            flex: 1 1 33%;
+            flex-flow: row nowrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    &__box {
+        flex-flow: column nowrap;
+        gap: rem(8);
+
+        a {
+            color: clr(neutral, light-grayish-blue);
+
+            transition: all 350ms ease-in-out;
+        
+            &:hover {
+                color: clr(accent, bright-blue);
+            }
+        }
+    }
+
+    &__social {
+        margin-top: rem(52);
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            transition: all 350ms ease-in-out;
+
+            &:hover {
+                border: 1px solid clr(accent, bright-blue);
+                color: clr(accent, bright-blue);
+            }
+        }
+
+        @include breakpoint(medium) {
+            flex: 1 1 33%;
+            
+            margin-top: 0;
+        }
+    }
+}
